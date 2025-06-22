@@ -1,0 +1,24 @@
+@startuml
+
+class Student {
+    - name : String
+    + Student(name : String)
+    + intro() : void
+}
+
+class Class1 {
+    - clip : String
+    + Class1(name : String)
+    + clip활동하다() : void
+}
+
+class Class2 {
+    - clip : String
+    + Class2(name : String)
+    + clip활동하다() : void
+}
+
+Student <|-- Class1
+Student <|-- Class2
+
+@enduml

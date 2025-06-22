@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Google 로그인 예제</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+  <h2>Google 계정으로 로그인</h2>
+
+  <!-- 로그인 버튼을 표시할 자리 -->
+  <div id="g_id_onload"
+       data-client_id= "168911965157-qs1sfjvv82ct6hs0johvl0m18iobb02k.apps.googleusercontent.com"
+       data-context="signin"
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="false">
+  </div>
+
+  <!-- 버튼 디자인 설정 -->
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-shape="rectangular"
+       data-logo_alignment="left">
+  </div>
+
+  <script>
+    // Google 로그인이 완료되면 자동으로 실행되는 함수
+    function handleCredentialResponse(response) {
+      // 받은 토큰(인증 정보)을 콘솔에 출력 (실제로는 서버에 보내야 함)
+      console.log("Google ID Token:", response.credential);
+
+      // 로그인 성공 메시지 표시
+      alert("로그인 성공! 환영합니다 😊");
+
+      // 웹사이트 사용 시작하는 로직을 여기에 추가할 수 있어요
+    }
+  </script>
+
+</body>
+</html>
